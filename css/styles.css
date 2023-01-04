@@ -80,6 +80,7 @@ input[type="email"] {
 }
 
 input::placeholder {
+    font-weight: 300;
     color: hsla(0, 36%, 70%, 0.4)
 }
 
@@ -138,11 +139,54 @@ a:hover {
 }
 
 
-@media screen and (min-width: 730px) {
-    aside.heroImage {
-        height: 60vh;
-        background-image: url(../images/hero-desktop.jpg);
+@media screen and (min-width: 770px) {
+    body {
+        background-image: url(../images/bg-pattern-desktop.svg);
         background-repeat: no-repeat;
         background-size: contain;
+        display: grid;
+        grid-template-columns: 4fr 3fr;
+        grid-template-rows: 1fr 5fr;
+        grid-template-areas: "header img" "main img";
+        align-items: center;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    header {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: left;
+        width: 75%;
+    }
+    main p {
+        width: 75%;
+        text-align: left;
+    }
+    main {
+        grid-area: main;
+        width: 70%;
+        margin: 2rem auto;
+    }
+
+    form {
+        width: 80%;
+    }
+    
+    aside {
+        grid-area: img;
+    }
+
+    aside.heroImage {
+        width: 100%;
+        height: 100vh;
+        background-image: url(../images/hero-desktop.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
